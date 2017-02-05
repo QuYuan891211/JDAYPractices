@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 先添加包名-->
+<hibernate-mapping package="cn.qy.hibernatePractice.J33_b_1VNRelationMap.Entity">
+    <class name="Father" table="j33father">
+        <id name="ID" column="ID">
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" column="name"></property>
+        <set name="child">
+            <key column="Fid"></key>
+            <one-to-many class="Child"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

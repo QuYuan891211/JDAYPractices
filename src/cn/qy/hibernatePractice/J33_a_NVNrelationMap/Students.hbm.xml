@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.qy.hibernatePractice.J33_a_NVNrelationMap.Entity">
+    <class name="Students" table="j33students">
+        <id name="ID" column="ID">
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" column="name">
+        </property>
+        <set name="teachersList" table="j33r_teachers_students">
+            <key column="SID"></key>
+            <many-to-many column="TID" class="Teachers"></many-to-many>
+        </set>
+    </class>
+
+</hibernate-mapping>

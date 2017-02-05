@@ -1,0 +1,38 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <!-- 通常，一个session-factory节点代表一个数据库 -->
+    <session-factory>
+        <!-- 1. 基础配置 -->
+        <!--驱动类-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--驱动链接URL-->
+        <property name="hibernate.connection.url">jdbc:mysql:///hib_demo</property>
+        <!--数据库用户名-->
+        <property name="hibernate.connection.username">root</property>
+        <!--数据库密码-->
+        <property name="hibernate.connection.password">root</property>
+        <!--数据库使用的方言-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+
+
+        <!-- 2. 其他相关配置 -->
+        <!-- 2.1 显示hibernate在运行时候执行的sql语句 -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 2.2 格式化sql -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- 2.3 自动建表  -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--加载映射文件-->
+        <mapping resource="cn/qy/hibernatePractice/J32_a_configeration/Grils.hbm.xml"></mapping>
+        <mapping resource="cn/qy/hibernatePractice/J33_b_1VNRelationMap/Child.hbm.xml"></mapping>
+        <mapping resource="cn/qy/hibernatePractice/J33_b_1VNRelationMap/Father.hbm.xml"></mapping>
+        <mapping resource="cn/qy/hibernatePractice/J33_a_NVNrelationMap/Students.hbm.xml"></mapping>
+        <mapping resource="cn/qy/hibernatePractice/J33_a_NVNrelationMap/Teachers.hbm.xml"></mapping>
+
+    </session-factory>
+</hibernate-configuration>

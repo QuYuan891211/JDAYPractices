@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 先添加包名-->
+<hibernate-mapping package="cn.qy.hibernatePractice.J32_a_configeration.Entity">
+    <class name="Grils" table="grils">
+        <id name="GID" column="gid">
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" column="name"></property>
+        <property name="meeetDate" column="meetDate"></property>
+    </class>
+
+
+</hibernate-mapping>
